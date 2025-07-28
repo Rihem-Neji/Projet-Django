@@ -1,0 +1,77 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire Candidat</title>
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet"  href="{% static 'css/style.css' %}">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+</head>
+<body class="form-body">
+    <div class="overlay">
+        <div class="container">
+            <h2><i class="fas fa-user-plus"></i> Formulaire de Candidat</h2>
+            <form method="POST">
+                 {% csrf_token %}
+                <label for="name">Nom complet</label>
+                <div class="input-icon">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="name" required>
+                </div>
+
+                <label for="skills">Compétences</label>
+                <div class="input-icon">
+                    <i class="fas fa-code"></i>
+                    <input type="text" name="skills" required placeholder="ex: Python, Excel, HTML">
+                </div>
+
+                <label for="certifications">Certifications</label>
+                <div class="input-icon">
+                    <i class="fas fa-certificate"></i>
+                    <input type="text" name="certifications" placeholder="ex: PMP, CFA">
+                </div>
+
+                <label for="field_of_study">Domaine d'étude</label>
+                <div class="input-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                    <input type="text" name="field_of_study" required>
+                </div>
+
+                <label for="experience_years">Années d'expérience</label>
+                <div class="input-icon">
+                    <i class="fas fa-briefcase"></i>
+                    <input type="number" name="experience_years" min="0" required>
+                </div>
+
+                <label for="desired_salary_min">Salaire minimum souhaité</label>
+                <div class="input-icon">
+                    <i class="fas fa-sack-dollar"></i>
+                    <input type="number" name="desired_salary_min" required>
+                </div>
+
+                <label for="gender">Genre</label>
+                <div class="input-icon">
+                    <i class="fas fa-venus-mars"></i>
+                    <select name="gender" required>
+                        <option value="">-- Sélectionner --</option>
+                        <option value="male">Homme</option>
+                        <option value="female">Femme</option>
+                        <option value="other">Autre</option>
+                    </select>
+                </div>
+
+                <label for="country">Pays</label>
+                <div class="input-icon">
+                    <i class="fas fa-globe"></i>
+                    <input type="text" name="country" required>
+                </div>
+
+                <button type="submit"><i class="fas fa-paper-plane"></i> Soumettre</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

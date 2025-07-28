@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Résultats du Matching</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="body-result">
+    <div class="container mt-4">
+    <h1 class="mb-4">Résultats du Matching pour {{ name }}</h1>
+
+    {% if jobs %}
+        <table class="table table-bordered">
+            <thead class="table-light">
+                <tr>
+                    <th>Métier recommandé</th>
+                    <th>Score de similarité</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for job, score in jobs %}
+                    <tr>
+                        <td>{{ job }}</td>
+                        <td>{{ score }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Aucun résultat trouvé.</p>
+    {% endif %}
+
+    <a href="/formulaire" class="btn btn-secondary mt-3">Retour au Formulaire</a>
+</body>
+</html>
