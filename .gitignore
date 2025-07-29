@@ -1,0 +1,3 @@
+# Empêcher de renvoyer ce dossier à l'avenir
+model/saved_model/
+backup_model/
