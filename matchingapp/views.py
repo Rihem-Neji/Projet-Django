@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .matching import predict_match  # 👈 on importe la fonction
 import pandas as pd
+import requests
 
 from matchingapp.model.recommender import recommend_jobs
 
@@ -23,15 +24,31 @@ def formulaire(request):
             'country': request.POST.get('country')
         }
 
-        df_candidate = pd.DataFrame([data])
-        df_candidate = recommend_jobs(df_candidate, df_jobs)
+         # 👇 Formatage des inputs pour Hugging Face
+        payload = {
+            "data": [
+                data['skills'],
+                data['certifications'],
+                data['field_of_study'],
+                data['country'],
+                data['gender']
+            ]
+        }
 
-        top_jobs = df_candidate.loc[0, 'top_matched_jobs']
-        top_scores = df_candidate.loc[0, 'top_similarity_scores']
+        # 👇 Appel à l'API Hugging Face
+        url = "https://RihemNeji-ProjetDjango.hf.space/run/predict"
+        response = requests.post(url, json=payload)
+        result = response.json()
+
+        # 👇 Récupération des jobs + scores
+        output = result['data'][0]  # tu retournes une string formatée dans app.py
+        lines = output.split('\n')
+        jobs = [line.split(' | ')[0] for line in lines]
+        scores = [float(line.split(' | ')[1]) for line in lines]
 
         context = {
             'name': data['name'],
-            'jobs': zip(top_jobs, top_scores)
+            'jobs': zip(jobs, scores)
         }
         return render(request, 'result.html', context)
     
