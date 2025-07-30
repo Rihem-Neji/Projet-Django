@@ -15,8 +15,7 @@ def recommend_jobs(df_candidate, df_jobs, top_k=3):
     }
 
     # 🔗 Lien API Hugging Face
-    url = "https://rihemneji-projetdjango.hf.space/run/predict"
-
+    url = os.environ.get("HUGGINGFACE_API_URL")
     try:
         response = requests.post(url, json=payload)
         response.raise_for_status()
