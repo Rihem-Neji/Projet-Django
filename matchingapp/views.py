@@ -1,10 +1,7 @@
+import os
+import requests
 from django.shortcuts import render
 from django.http import HttpResponse
-import requests
-
-from matchingapp.model.recommender import recommend_jobs
-
-# Trigger redeployment
 
 
 def formulaire(request):
@@ -20,7 +17,6 @@ def formulaire(request):
             'country': request.POST.get('country')
         }
 
-         # 👇 Formatage des inputs pour Hugging Face
         payload = {
             "data": [
                 data['skills'],
@@ -31,27 +27,32 @@ def formulaire(request):
             ]
         }
 
-        # 👇 Appel à l'API Hugging Face
-        url = "https://RihemNeji-ProjetDjango.hf.space/run/predict"
-        response = requests.post(url, json=payload)
-        result = response.json()
+        try:
+            # 🔐 Appel Hugging Face API
+            url = os.environ.get("HUGGINGFACE_API_URL") or "https://RihemNeji-ProjetDjango.hf.space/run/predict"
+            response = requests.post(url, json=payload, timeout=20)
 
-        # 👇 Récupération des jobs + scores
-        output = result['data'][0]  # tu retournes une string formatée dans app.py
-        lines = output.split('\n')
-        jobs = [line.split(' | ')[0] for line in lines]
-        scores = [float(line.split(' | ')[1]) for line in lines]
+            if response.status_code != 200:
+                return HttpResponse(f"Erreur API HuggingFace : {response.status_code} - {response.text}", status=500)
 
-        context = {
-            'name': data['name'],
-            'jobs': zip(jobs, scores)
-        }
-        return render(request, 'result.html', context)
-    
+            result = response.json()
+            output = result['data'][0]
+
+            if not isinstance(output, str):
+                return HttpResponse(f"Réponse API invalide : {output}", status=500)
+
+            lines = output.strip().split('\n')
+            jobs = [line.split(' | ')[0] for line in lines]
+            scores = [float(line.split(' | ')[1]) for line in lines]
+
+            context = {
+                'name': data['name'],
+                'jobs': zip(jobs, scores)
+            }
+
+            return render(request, 'result.html', context)
+
+        except Exception as e:
+            return HttpResponse(f"Erreur lors du traitement de la requête : {str(e)}", status=500)
+
     return render(request, 'formulaire.html')
-
-
-def resultat(request):
-    # Optionnel, utile seulement si tu affiches un historique
-    return render(request, 'result.html')
-
