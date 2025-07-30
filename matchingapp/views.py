@@ -1,13 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .matching import predict_match  # 👈 on importe la fonction
 import pandas as pd
 import requests
 
 from matchingapp.model.recommender import recommend_jobs
-
-# Chargement du dataset
-df_jobs = pd.read_csv("matchingapp/data/jobs_cleaned.csv")
 
 
 
