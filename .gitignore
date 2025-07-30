@@ -1,3 +1,8 @@
-# Empêcher de renvoyer ce dossier à l'avenir
+# Ignore le modèle local
 model/saved_model/
 backup_model/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env

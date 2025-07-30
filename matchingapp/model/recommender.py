@@ -3,7 +3,7 @@ import os
 import requests
 
 def recommend_jobs(df_candidate, top_k=3):
-    url = os.environ.get("https://rihemneji-projetdjango.hf.space/run/predict")
+    url = os.environ.get("HUGGINGFACE_API_URL")
 
     payload = {
         "data": [
