@@ -28,7 +28,7 @@ def formulaire(request):
         }
 
         try:
-            url =  "https://rihemneji-projetdjango.hf.space/run/predict"
+            url =  "https://rihemneji-projetdjango.hf.space/api/predict"
             response = requests.post(url, json=payload)
             if response.status_code == 200:
                 result = response.json()
