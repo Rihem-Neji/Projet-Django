@@ -1,24 +1,14 @@
-databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
-
- services:
- - type: pserv
-   name: pgbouncer
-   runtime: docker
-   plan: standard
-   repo: https://github.com/render-oss/docker-pgbouncer
-   envVars:
-   - key: DATABASE_URL
-     fromDatabase:
-       name: mysite
-       property: connectionString
-   - key: POOL_MODE
-     value: transaction
-   - key: SERVER_RESET_QUERY
-     value: DISCARD ALL
-   - key: MAX_CLIENT_CONN
-     value: 500
-   - key: DEFAULT_POOL_SIZE
-     value: 50
+services:
+  - type: web
+    name: django-app
+    env: python
+    plan: free
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn monprojet.wsgi:application"
+    envVars:
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: nom-de-ta-bdd
+          property: connectionString
