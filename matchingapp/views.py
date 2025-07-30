@@ -1,8 +1,7 @@
-import os
-import requests
 from django.shortcuts import render
-from django.http import HttpResponse
-
+import pandas as pd
+import requests
+import os
 
 def formulaire(request):
     if request.method == 'POST':
@@ -17,6 +16,7 @@ def formulaire(request):
             'country': request.POST.get('country')
         }
 
+        # ⚠️ Seuls les champs nécessaires pour Hugging Face
         payload = {
             "data": [
                 data['skills'],
@@ -28,33 +28,25 @@ def formulaire(request):
         }
 
         try:
-            # 🔐 Appel Hugging Face API
-            url = os.environ.get("HUGGINGFACE_API_URL") or "https://rihemneji-projetdjango.hf.space/run/predict"
+            url =  "https://rihemneji-projetdjango.hf.space/run/predict"
+            response = requests.post(url, json=payload)
+            if response.status_code == 200:
+                result = response.json()
+                output = result['data'][0]
+                lines = output.split('\n')
+                jobs = [line.split(' | ')[0] for line in lines]
+                scores = [line.split(' | ')[1] for line in lines]
 
-            response = requests.post(url, json=payload, timeout=20)
-
-            if response.status_code != 200:
-                return HttpResponse(f"Erreur API HuggingFace : {response.status_code} - {response.text}", status=500)
-
-            result = response.json()
-            output = result['data'][0]
-
-            if not isinstance(output, str):
-                return HttpResponse(f"Réponse API invalide : {output}", status=500)
-
-            lines = output.strip().split('\n')
-            jobs = [line.split(' | ')[0] for line in lines]
-            scores = [float(line.split(' | ')[1]) for line in lines]
-
-            context = {
-                'name': data['name'],
-                'jobs': zip(jobs, scores)
-            }
-
-            return render(request, 'result.html', context)
+                context = {
+                    'name': data['name'],
+                    'jobs': zip(jobs, scores)
+                }
+                return render(request, 'result.html', context)
+            else:
+                return HttpResponse(f"Erreur API HuggingFace : {response.status_code} - {response.text}")
 
         except Exception as e:
-            return HttpResponse(f"Erreur lors du traitement de la requête : {str(e)}", status=500)
+            return HttpResponse(f"Erreur lors de l’appel API : {e}")
 
     return render(request, 'formulaire.html')
 def resultat(request):
