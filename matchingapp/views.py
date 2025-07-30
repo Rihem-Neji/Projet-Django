@@ -29,7 +29,8 @@ def formulaire(request):
 
         try:
             # 🔐 Appel Hugging Face API
-            url = os.environ.get("HUGGINGFACE_API_URL") or "https://RihemNeji-ProjetDjango.hf.space/run/predict"
+            url = os.environ.get("HUGGINGFACE_API_URL") or "https://rihemneji-projetdjango.hf.space/run/predict"
+
             response = requests.post(url, json=payload, timeout=20)
 
             if response.status_code != 200:
