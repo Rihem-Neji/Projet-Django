@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 import pandas as pd
 import requests
@@ -43,10 +44,19 @@ def formulaire(request):
                 }
                 return render(request, 'result.html', context)
             else:
-                return HttpResponse(f"Erreur API HuggingFace : {response.status_code} - {response.text}")
+                print("⚠️ Erreur Hugging Face API")
+                print("Status code :", response.status_code)
+                print("Response text :", response.text)
+                return render(request, 'formulaire.html', {
+                    'error': f"Erreur API HuggingFace : {response.status_code} - {response.text}"
+                })
 
         except Exception as e:
-            return HttpResponse(f"Erreur lors de l’appel API : {e}")
+            print("❌ Exception levée lors de l’appel API :", e)
+            return render(request, 'formulaire.html', {
+                'error': f"Erreur lors de l’appel API : {e}"
+            })
+
 
     return render(request, 'formulaire.html')
 def resultat(request):
