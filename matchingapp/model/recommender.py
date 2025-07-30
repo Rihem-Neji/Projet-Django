@@ -1,54 +1,39 @@
 import pandas as pd
-import numpy as np
-from sentence_transformers import SentenceTransformer
-from sklearn.metrics.pairwise import cosine_similarity
-import os
-
-# Fonction utilitaire
-def clean_text(s):
-    if pd.isna(s):
-        return ""
-    return str(s).lower().strip()
-
-def prepare_text(df, fields):
-    return df[fields].fillna('').agg(' '.join, axis=1).apply(clean_text)
-
-# Charger le modèle depuis le dossier
-model_path = os.path.join(os.path.dirname(__file__), 'saved_model')
-model = SentenceTransformer(model_path)
+import requests
 
 def recommend_jobs(df_candidate, df_jobs, top_k=3):
-    candidates_text = prepare_text(df_candidate, ['skills', 'certifications', 'field_of_study', 'country', 'gender'])
-    jobs_text = prepare_text(df_jobs, ['skills', 'Qualifications', 'location', 'Preference', 'Job Title'])
+    # Préparation du texte candidat
+    skills = df_candidate.iloc[0].get("skills", "")
+    certifications = df_candidate.iloc[0].get("certifications", "")
+    field = df_candidate.iloc[0].get("field_of_study", "")
+    country = df_candidate.iloc[0].get("country", "")
+    gender = df_candidate.iloc[0].get("gender", "")
 
-    cand_embeddings = model.encode(candidates_text.tolist(), show_progress_bar=False)
-    job_embeddings = model.encode(jobs_text.tolist(), show_progress_bar=False)
+    # Payload pour Hugging Face
+    payload = {
+        "data": [skills, certifications, field, country, gender]
+    }
 
-    similarity_matrix = cosine_similarity(cand_embeddings, job_embeddings)
+    # 🔗 Lien API Hugging Face
+    url = "https://rihemneji-projetdjango.hf.space/run/predict"
 
-    top_jobs_titles = []
-    top_jobs_scores = []
+    try:
+        response = requests.post(url, json=payload)
+        response.raise_for_status()
+        result = response.json()
 
-    for i in range(len(df_candidate)):
-        sorted_indices = np.argsort(similarity_matrix[i])[::-1]
-        unique_titles = []
-        scores = []
+        output = result['data'][0]  # output = "Offre A | 94.3%\nOffre B | 88.1%\nOffre C | 81.5%"
+        lines = output.strip().split('\n')
 
-        for idx in sorted_indices:
-            title = df_jobs.iloc[idx]['Job Title']
-            score = similarity_matrix[i, idx]
+        # Séparer titres et scores
+        jobs = [line.split(' | ')[0] for line in lines]
+        scores = [float(line.split(' | ')[1].replace('%', '')) for line in lines]
 
-            if title not in unique_titles:
-                unique_titles.append(title)
-                scores.append(round(score, 4))
+        df_candidate['top_matched_jobs'] = [jobs]
+        df_candidate['top_similarity_scores'] = [scores]
 
-            if len(unique_titles) >= top_k:
-                break
+        return df_candidate[['skills', 'top_matched_jobs', 'top_similarity_scores']]
 
-        top_jobs_titles.append(unique_titles)
-        top_jobs_scores.append(scores)
-
-    df_candidate['top_matched_jobs'] = top_jobs_titles
-    df_candidate['top_similarity_scores'] = top_jobs_scores
-
-    return df_candidate[['skills', 'top_matched_jobs', 'top_similarity_scores']]
+    except Exception as e:
+        print(f"[ERREUR] Appel HuggingFace échoué : {e}")
+        return df_candidate
