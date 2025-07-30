@@ -56,3 +56,5 @@ def formulaire(request):
             return HttpResponse(f"Erreur lors du traitement de la requête : {str(e)}", status=500)
 
     return render(request, 'formulaire.html')
+def resultat(request):
+    return render(request, 'result.html')
