@@ -1,0 +1,38 @@
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 302 0
+"GET /formulaire/ HTTP/1.1" 200 3157
+"GET /static/css/style.css HTTP/1.1" 304 0
+Starting new HTTPS connection (1): rihemneji-projetdjango.hf.space:443
+https://rihemneji-projetdjango.hf.space:443 "POST /api/predict HTTP/1.1" 404 22
+"POST /formulaire/ HTTP/1.1" 200 3326
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Starting new HTTPS connection (1): rihemneji-projetdjango.hf.space:443
+https://rihemneji-projetdjango.hf.space:443 "POST /api/predict HTTP/1.1" 404 22
+"POST /formulaire/ HTTP/1.1" 200 53
+"GET /formulaire/ HTTP/1.1" 200 3157
+Starting new HTTPS connection (1): rihemneji-projetdjango.hf.space:443
+https://rihemneji-projetdjango.hf.space:443 "POST /api/predict HTTP/1.1" 404 22
+"POST /formulaire/ HTTP/1.1" 200 53
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader

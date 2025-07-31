@@ -1,8 +1,7 @@
+import os
+import requests
 from django.http import HttpResponse
 from django.shortcuts import render
-import pandas as pd
-import requests
-import os
 
 def formulaire(request):
     if request.method == 'POST':
@@ -17,7 +16,6 @@ def formulaire(request):
             'country': request.POST.get('country')
         }
 
-        # ⚠️ Seuls les champs nécessaires pour Hugging Face
         payload = {
             "data": [
                 data['skills'],
@@ -29,8 +27,13 @@ def formulaire(request):
         }
 
         try:
-            url =  "https://rihemneji-projetdjango.hf.space/api/predict"
-            response = requests.post(url, json=payload)
+            url = "https://rihemneji-projetdjango.hf.space/api/predict"
+            headers = {
+                "Authorization": f"Bearer {os.environ.get('HF_API_TOKEN')}",
+                "Content-Type": "application/json"
+            }
+
+            response = requests.post(url, json=payload, headers=headers)
             if response.status_code == 200:
                 result = response.json()
                 output = result['data'][0]
@@ -44,20 +47,12 @@ def formulaire(request):
                 }
                 return render(request, 'result.html', context)
             else:
-                print("⚠️ Erreur Hugging Face API")
-                print("Status code :", response.status_code)
-                print("Response text :", response.text)
-                return render(request, 'formulaire.html', {
-                    'error': f"Erreur API HuggingFace : {response.status_code} - {response.text}"
-                })
+                return HttpResponse(f"Erreur API HuggingFace : {response.status_code} - {response.text}")
 
         except Exception as e:
-            print("❌ Exception levée lors de l’appel API :", e)
-            return render(request, 'formulaire.html', {
-                'error': f"Erreur lors de l’appel API : {e}"
-            })
-
+            return HttpResponse(f"Erreur lors de l’appel API : {e}")
 
     return render(request, 'formulaire.html')
+
 def resultat(request):
     return render(request, 'result.html')
