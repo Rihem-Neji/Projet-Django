@@ -36,3 +36,169 @@ C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloa
 Watching for file changes with StatReloader
 C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 302 0
+"GET /formulaire/ HTTP/1.1" 200 3157
+"GET /static/css/style.css HTTP/1.1" 304 0
+URL utilisée : https://rihemneji-projetdjango.hf.space/predict
+Payload envoyé : ['dcbns', 'dxizs', 'sxs', 'x, ;ms', 'other']
+Starting new HTTPS connection (1): rihemneji-projetdjango.hf.space:443
+https://rihemneji-projetdjango.hf.space:443 "POST /predict HTTP/1.1" 404 22
+Réponse API : 404 - {"detail":"Not Found"}
+Internal Server Error: /formulaire/
+"POST /formulaire/ HTTP/1.1" 500 53
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 302 0
+"GET /formulaire/ HTTP/1.1" 200 3157
+"GET /static/css/style.css HTTP/1.1" 304 0
+URL utilisée : https://rihemneji-projetdjango.hf.space/predict
+Payload envoyé : ['njkl,;', 'cbhjk,', 'bhjnk,l', 'chudk', 'male']
+Starting new HTTPS connection (1): rihemneji-projetdjango.hf.space:443
+https://rihemneji-projetdjango.hf.space:443 "POST /predict HTTP/1.1" 404 22
+Réponse API : 404 - {"detail":"Not Found"}
+Internal Server Error: /formulaire/
+"POST /formulaire/ HTTP/1.1" 500 53
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 302 0
+"GET /formulaire/ HTTP/1.1" 200 3157
+"GET /static/css/style.css HTTP/1.1" 304 0
+URL utilisée : None
+Payload envoyé : ['xhjddk;s', 'xjxkldx', 'xjudikslm', 'hbxdd', 'female']
+Erreur lors du traitement de la requête : Invalid URL 'None': No scheme supplied. Perhaps you meant https://None?
+Internal Server Error: /formulaire/
+"POST /formulaire/ HTTP/1.1" 500 114
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 302 0
+"GET /formulaire/ HTTP/1.1" 200 3157
+"GET /static/css/style.css HTTP/1.1" 304 0
+URL utilisée : None
+Payload envoyé : ['cdjnk', 'ebhij', 'dhjk', 'enjeke,', 'female']
+Erreur lors du traitement de la requête : Invalid URL 'None': No scheme supplied. Perhaps you meant https://None?
+Internal Server Error: /formulaire/
+"POST /formulaire/ HTTP/1.1" 500 114
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 302 0
+"GET /formulaire/ HTTP/1.1" 200 3157
+"GET /static/css/style.css HTTP/1.1" 304 0
+URL utilisée : None
+Payload envoyé : ['cbjkd', 'dji ,c', ' ncjd', 'cn,dk', 'other']
+Erreur lors du traitement de la requête : Invalid URL 'None': No scheme supplied. Perhaps you meant https://None?
+Internal Server Error: /formulaire/
+"POST /formulaire/ HTTP/1.1" 500 114
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 302 0
+"GET /formulaire/ HTTP/1.1" 200 3157
+"GET /static/css/style.css HTTP/1.1" 304 0
+Starting new HTTPS connection (1): api-inference.huggingface.co:443
+https://api-inference.huggingface.co:443 "POST /models/rihemneji/sentence-transformers/all-MiniLM-L6-v2/pipeline/sentence-similarity HTTP/1.1" 401 41
+"POST /formulaire/ HTTP/1.1" 200 72
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 302 0
+"GET /formulaire/ HTTP/1.1" 200 3157
+"GET /static/css/style.css HTTP/1.1" 304 0
+Internal Server Error: /formulaire/
+"POST /formulaire/ HTTP/1.1" 500 61
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 302 0
+"GET /formulaire/ HTTP/1.1" 200 3157
+"GET /static/css/style.css HTTP/1.1" 304 0
+Internal Server Error: /formulaire/
+"POST /formulaire/ HTTP/1.1" 500 61
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 302 0
+"GET /formulaire/ HTTP/1.1" 200 3157
+"GET /static/css/style.css HTTP/1.1" 304 0
+Starting new HTTPS connection (1): api-inference.huggingface.co:443
+https://api-inference.huggingface.co:443 "POST /models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 80
+"POST /formulaire/ HTTP/1.1" 200 555
