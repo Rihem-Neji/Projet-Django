@@ -2,10 +2,11 @@ import os
 import requests
 from django.http import HttpResponse
 from django.shortcuts import render
+from gradio_client import Client, handle_file # Importez le client
 
 def formulaire(request):
     if request.method == 'POST':
-        data = {
+        form_data = {
             'name': request.POST.get('name'),
             'skills': request.POST.get('skills'),
             'certifications': request.POST.get('certifications'),
@@ -15,59 +16,59 @@ def formulaire(request):
             'gender': request.POST.get('gender'),
             'country': request.POST.get('country')
         }
-
-        # ⚠️ Seuls les champs nécessaires pour Hugging Face
-        payload = {
-            "inputs": {
-                "source_sentence": f"{data['skills']}, {data['certifications']}, {data['field_of_study']}",
-                "sentences": [
-                    "Data Scientist",
-                    "Software Engineer",
-                    "Project Manager",
-                    "Marketing Specialist"
-                    # Ajoutez ici une liste d'intitulés de poste potentiels
-                ]
-            }
-        }
         
-        # Le modèle que vous utilisiez n'est pas fait pour la "sentence-similarity pipeline"
-        # J'ai remplacé par un modèle adapté à cette tâche.
-        # Vous pouvez trouver d'autres modèles ici: https://huggingface.co/models?pipeline_tag=sentence-similarity
-        url = "https://api-inference.huggingface.co/models/sentence-transformers/all-MiniLM-L6-v2"
-        
-        # Récupération sécurisée du jeton d'accès
-        hf_token = os.environ.get("HUGGINGFACE_TOKEN")
-        if not hf_token:
-            return HttpResponse("Erreur : Le jeton d'accès Hugging Face n'est pas configuré.", status=500)
-
-        headers = {
-            "Authorization": f"Bearer {hf_token}",
-            "Content-Type": "application/json"
-        }
-
         try:
-            response = requests.post(url, headers=headers, json=payload)
+            # --- 1. Initialisation du client ---
+            # On pointe vers le nom du Space, pas l'URL de l'API.
+            # On passe le token directement ici pour l'authentification.
+            hf_token = os.environ.get("HUGGINGFACE_TOKEN")
+            if not hf_token:
+                return HttpResponse("Erreur de configuration serveur : Le jeton d'accès Hugging Face est manquant.", status=500)
             
-            if response.status_code == 200:
-                scores = response.json()
-                jobs = payload['inputs']['sentences']
+            print("--- INFO: Connexion au Space Gradio via le client ---")
+            client = Client("RihemNeji/ProjetDjango", hf_token=hf_token)
 
-                # Crée une liste de tuples (job, score) et la trie par score décroissant
-                job_scores = sorted(zip(jobs, scores), key=lambda item: item[1], reverse=True)
+            # --- 2. Appel de la fonction 'predict' de manière bloquante ---
+            # Le client gère l'attente pour nous. Il ne renverra que le résultat final.
+            # Les arguments sont passés directement par leur nom.
+            print("--- INFO: Lancement de la prédiction et attente du résultat... ---")
+            result = client.predict(
+                skills=form_data['skills'],
+                certifications=form_data['certifications'],
+                field=form_data['field_of_study'],
+                country=form_data['country'],
+                gender=form_data['gender'],
+                api_name="/predict"
+            )
+            
+            # Le résultat sera directement la chaîne de caractères renvoyée par votre app.py
+            # Ex: "Métier 1 | 95.2%\n..."
+            print(f"--- INFO: Résultat reçu : {result} ---")
+            output_string = result
+            
+            # --- 3. Analyse du résultat (même code qu'avant) ---
+            lines = output_string.strip().split('\n')
+            job_scores = []
+            for line in lines:
+                if ' | ' in line:
+                    parts = line.split(' | ', 1)
+                    if len(parts) == 2:
+                        job_scores.append((parts[0], parts[1]))
 
-                context = {
-                    'name': data['name'],
-                    'job_scores': job_scores
-                }
-                # Assurez-vous d'avoir un template 'result.html' qui peut itérer sur 'job_scores'
-                return render(request, 'result.html', context)
-            else:
-                return HttpResponse(f"Erreur API Hugging Face : {response.status_code} - {response.text}")
+            # --- 4. Envoi au template ---
+            context = {
+                'name': form_data['name'],
+                'jobs': job_scores
+            }
+            return render(request, 'result.html', context)
 
         except Exception as e:
-            return HttpResponse(f"Erreur lors de l’appel API : {e}")
+            # Cette exception attrapera les erreurs de connexion, de timeout, etc.
+            return HttpResponse(f"Une erreur est survenue lors de l'exécution de la tâche sur Hugging Face : {e}", status=500)
+
 
     return render(request, 'formulaire.html')
+
 
 def resultat(request):
     return render(request, 'result.html')

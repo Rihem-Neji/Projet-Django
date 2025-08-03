@@ -202,3 +202,198 @@ Watching for file changes with StatReloader
 Starting new HTTPS connection (1): api-inference.huggingface.co:443
 https://api-inference.huggingface.co:443 "POST /models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 80
 "POST /formulaire/ HTTP/1.1" 200 555
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 302 0
+"GET /formulaire/ HTTP/1.1" 200 3157
+"GET /static/css/style.css HTTP/1.1" 304 0
+Starting new HTTPS connection (1): api-inference.huggingface.co:443
+https://api-inference.huggingface.co:443 "POST /models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 78
+"POST /formulaire/ HTTP/1.1" 200 556
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 302 0
+"GET /formulaire/ HTTP/1.1" 200 3157
+"GET /static/css/style.css HTTP/1.1" 304 0
+Starting new HTTPS connection (1): api-inference.huggingface.co:443
+https://api-inference.huggingface.co:443 "POST /models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 81
+"POST /formulaire/ HTTP/1.1" 200 550
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 302 0
+"GET /formulaire/ HTTP/1.1" 200 3157
+"GET /static/css/style.css HTTP/1.1" 304 0
+Starting new HTTPS connection (1): rihemneji-projetdjango.hf.space:443
+https://rihemneji-projetdjango.hf.space:443 "POST /gradio_api/call/predict HTTP/1.1" 422 231
+"POST /formulaire/ HTTP/1.1" 200 263
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 302 0
+"GET /formulaire/ HTTP/1.1" 200 3157
+"GET /static/css/style.css HTTP/1.1" 304 0
+Internal Server Error: /formulaire/
+Traceback (most recent call last):
+  File "C:\Users\chaie\OneDrive\Bureau\Projet Django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\chaie\OneDrive\Bureau\Projet Django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py", line 28, in formulaire
+    form_data['skills'],
+    ^^^^^^^^^
+NameError: name 'form_data' is not defined. Did you mean: 'format'?
+"POST /formulaire/ HTTP/1.1" 500 145
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 302 0
+"GET /formulaire/ HTTP/1.1" 200 3157
+"GET /static/css/style.css HTTP/1.1" 304 0
+Internal Server Error: /formulaire/
+Traceback (most recent call last):
+  File "C:\Users\chaie\OneDrive\Bureau\Projet Django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\chaie\OneDrive\Bureau\Projet Django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py", line 28, in formulaire
+    form_data['skills'],
+    ^^^^^^^^^
+NameError: name 'form_data' is not defined. Did you mean: 'format'?
+"POST /formulaire/ HTTP/1.1" 500 145
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 302 0
+"GET /formulaire/ HTTP/1.1" 200 3157
+"GET /static/css/style.css HTTP/1.1" 304 0
+Internal Server Error: /formulaire/
+Traceback (most recent call last):
+  File "C:\Users\chaie\OneDrive\Bureau\Projet Django\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\chaie\OneDrive\Bureau\Projet Django\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py", line 28, in formulaire
+    form_data['skills'],
+    ^^^^^^^^^
+NameError: name 'form_data' is not defined. Did you mean: 'formdata'?
+"POST /formulaire/ HTTP/1.1" 500 145
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 302 0
+"GET /formulaire/ HTTP/1.1" 200 3157
+"GET /static/css/style.css HTTP/1.1" 304 0
+Starting new HTTPS connection (1): rihemneji-projetdjango.hf.space:443
+https://rihemneji-projetdjango.hf.space:443 "POST /gradio_api/call/predict HTTP/1.1" 200 47
+"POST /formulaire/ HTTP/1.1" 200 39
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\chaie\OneDrive\Bureau\Projet Django\matchingapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 302 0
+"GET /formulaire/ HTTP/1.1" 200 3157
+"GET /static/css/style.css HTTP/1.1" 304 0
+Starting new HTTPS connection (1): rihemneji-projetdjango.hf.space:443
+https://rihemneji-projetdjango.hf.space:443 "POST /gradio_api/call/predict HTTP/1.1" 200 47
+Internal Server Error: /formulaire/
+"POST /formulaire/ HTTP/1.1" 500 134
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 302 0
+"GET /formulaire/ HTTP/1.1" 200 3157
+"GET /static/css/style.css HTTP/1.1" 304 0
+Starting new HTTPS connection (1): huggingface.co:443
+https://huggingface.co:443 "GET /api/spaces/RihemNeji/ProjetDjango HTTP/1.1" 200 1862
+https://huggingface.co:443 "GET /api/spaces/RihemNeji/ProjetDjango/runtime HTTP/1.1" 200 289
+connect_tcp.started host='rihemneji-projetdjango.hf.space' port=443 local_address=None timeout=5.0 socket_options=None
+connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001C1714863C0>
+start_tls.started ssl_context=<ssl.SSLContext object at 0x000001C17144BE30> server_hostname='rihemneji-projetdjango.hf.space' timeout=5.0
+start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001C171455450>
+send_request_headers.started request=<Request [b'GET']>
+send_request_headers.complete
+send_request_body.started request=<Request [b'GET']>
+send_request_body.complete
+receive_response_headers.started request=<Request [b'GET']>
+receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 03 Aug 2025 23:01:19 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'14681'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn'), (b'x-proxied-host', b'http://10.108.157.108'), (b'x-proxied-replica', b'fydakwv9-kiai2'), (b'x-proxied-path', b'/config'), (b'link', b'<https://huggingface.co/spaces/RihemNeji/ProjetDjango>;rel="canonical"'), (b'x-request-id', b'I1FxS1'), (b'vary', b'origin, access-control-request-method, access-control-request-headers'), (b'access-control-allow-credentials', b'true')])
+HTTP Request: GET https://rihemneji-projetdjango.hf.space/config "HTTP/1.1 200 OK"
+receive_response_body.started request=<Request [b'GET']>
+receive_response_body.complete
+response_closed.started
+response_closed.complete
+close.started
+close.complete
+connect_tcp.started host='rihemneji-projetdjango.hf.space' port=443 local_address=None timeout=5.0 socket_options=None
+connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001C171456C10>
+start_tls.started ssl_context=<ssl.SSLContext object at 0x000001C171223DA0> server_hostname='rihemneji-projetdjango.hf.space' timeout=5.0
+start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001C1714A1480>
+send_request_headers.started request=<Request [b'GET']>
+send_request_headers.complete
+send_request_body.started request=<Request [b'GET']>
+send_request_body.complete
+receive_response_headers.started request=<Request [b'GET']>
+receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 03 Aug 2025 23:01:20 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'1340'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn'), (b'x-proxied-host', b'http://10.108.157.108'), (b'x-proxied-replica', b'fydakwv9-kiai2'), (b'x-proxied-path', b'/gradio_api/info?serialize=False'), (b'link', b'<https://huggingface.co/spaces/RihemNeji/ProjetDjango>;rel="canonical"'), (b'x-request-id', b'pQ-3t6'), (b'vary', b'origin, access-control-request-method, access-control-request-headers'), (b'access-control-allow-credentials', b'true')])
+HTTP Request: GET https://rihemneji-projetdjango.hf.space/gradio_api/info?serialize=False "HTTP/1.1 200 OK"
+receive_response_body.started request=<Request [b'GET']>
+receive_response_body.complete
+response_closed.started
+response_closed.complete
+close.started
+close.complete
+Starting new HTTPS connection (1): huggingface.co:443
+https://huggingface.co:443 "HEAD /api/telemetry/py_client/initiated HTTP/1.1" 200 0
+connect_tcp.started host='rihemneji-projetdjango.hf.space' port=443 local_address=None timeout=20 socket_options=None
+connect_tcp.started host='rihemneji-projetdjango.hf.space' port=443 local_address=None timeout=5.0 socket_options=None
+connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001C1714A35C0>
+connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001C1714C9D90>
+start_tls.started ssl_context=<ssl.SSLContext object at 0x000001C1712234A0> server_hostname='rihemneji-projetdjango.hf.space' timeout=20
+start_tls.started ssl_context=<ssl.SSLContext object at 0x000001C171223650> server_hostname='rihemneji-projetdjango.hf.space' timeout=5.0
+start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001C171499E10>
+send_request_headers.started request=<Request [b'POST']>
+send_request_headers.complete
+send_request_body.started request=<Request [b'POST']>
+send_request_body.complete
+receive_response_headers.started request=<Request [b'POST']>
+start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001C17149A030>
+send_request_headers.started request=<Request [b'GET']>
+send_request_headers.complete
+send_request_body.started request=<Request [b'GET']>
+send_request_body.complete
+receive_response_headers.started request=<Request [b'GET']>
+receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 03 Aug 2025 23:01:22 GMT'), (b'Content-Type', b'text/event-stream; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn'), (b'x-proxied-host', b'http://10.108.157.108'), (b'x-proxied-replica', b'fydakwv9-kiai2'), (b'x-proxied-path', b'/gradio_api/heartbeat/4aa7ccd3-24e2-40c1-b1f6-088553a25bd1'), (b'link', b'<https://huggingface.co/spaces/RihemNeji/ProjetDjango>;rel="canonical"'), (b'x-request-id', b'M4TbU7'), (b'vary', b'origin, access-control-request-method, access-control-request-headers'), (b'access-control-allow-credentials', b'true')])
+HTTP Request: GET https://rihemneji-projetdjango.hf.space/gradio_api/heartbeat/4aa7ccd3-24e2-40c1-b1f6-088553a25bd1 "HTTP/1.1 200 OK"
+receive_response_body.started request=<Request [b'GET']>
+receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 03 Aug 2025 23:01:22 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'47'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn'), (b'x-proxied-host', b'http://10.108.157.108'), (b'x-proxied-replica', b'fydakwv9-kiai2'), (b'x-proxied-path', b'/gradio_api/queue/join'), (b'link', b'<https://huggingface.co/spaces/RihemNeji/ProjetDjango>;rel="canonical"'), (b'x-request-id', b'4LEZ-S'), (b'vary', b'origin, access-control-request-method, access-control-request-headers'), (b'access-control-allow-credentials', b'true')])
+HTTP Request: POST https://rihemneji-projetdjango.hf.space/gradio_api/queue/join "HTTP/1.1 200 OK"
+receive_response_body.started request=<Request [b'POST']>
+receive_response_body.complete
+response_closed.started
+response_closed.complete
+close.started
+close.complete
+connect_tcp.started host='rihemneji-projetdjango.hf.space' port=443 local_address=None timeout=None socket_options=None
+connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001C1712A8D50>
+start_tls.started ssl_context=<ssl.SSLContext object at 0x000001C1712235C0> server_hostname='rihemneji-projetdjango.hf.space' timeout=None
+start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001C1712A8E50>
+send_request_headers.started request=<Request [b'GET']>
+send_request_headers.complete
+send_request_body.started request=<Request [b'GET']>
+send_request_body.complete
+receive_response_headers.started request=<Request [b'GET']>
+receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 03 Aug 2025 23:01:23 GMT'), (b'Content-Type', b'text/event-stream; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn'), (b'x-proxied-host', b'http://10.108.157.108'), (b'x-proxied-replica', b'fydakwv9-kiai2'), (b'x-proxied-path', b'/gradio_api/queue/data?session_hash=4aa7ccd3-24e2-40c1-b1f6-088553a25bd1'), (b'link', b'<https://huggingface.co/spaces/RihemNeji/ProjetDjango>;rel="canonical"'), (b'x-request-id', b'4aVVbw'), (b'vary', b'origin, access-control-request-method, access-control-request-headers'), (b'access-control-allow-credentials', b'true')])
+HTTP Request: GET https://rihemneji-projetdjango.hf.space/gradio_api/queue/data?session_hash=4aa7ccd3-24e2-40c1-b1f6-088553a25bd1 "HTTP/1.1 200 OK"
+receive_response_body.started request=<Request [b'GET']>
+receive_response_body.failed exception=GeneratorExit()
+response_closed.started
+response_closed.complete
+"POST /formulaire/ HTTP/1.1" 200 1324
